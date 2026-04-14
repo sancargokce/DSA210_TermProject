@@ -1,5 +1,5 @@
 # DSA210_TermProject
-# DSA210 Term Project
+
 
 ## Project Title
 The Championship DNA: Analyzing Differentiators Between League Champions and Runner-Up Teams in European Football
