@@ -1,1 +1,5 @@
 league,season,team,variable,source_name,source_link,notes
+Premier League,2023-2024,Manchester City,avg_age,FBref,,Squad stats page
+Premier League,2023-2024,Arsenal,avg_age,FBref,,Squad stats page
+Premier League,2023-2024,Manchester City,rotation_players_900plus,FBref,,Count of players with 900+ minutes
+Premier League,2023-2024,Arsenal,rotation_players_900plus,FBref,,Count of players with 900+ minutes
