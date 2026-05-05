@@ -1,2 +1,46 @@
-league,season,champion,runner_up
-Premier League,2023-2024,Manchester City,Arsenal
+league,league_country,season,team
+Premier League,England,2019-2020,Liverpool
+Premier League,England,2020-2021,Manchester City
+Premier League,England,2021-2022,Manchester City
+Premier League,England,2022-2023,Manchester City
+Premier League,England,2023-2024,Manchester City
+La Liga,Spain,2019-2020,Real Madrid
+La Liga,Spain,2020-2021,Atletico Madrid
+La Liga,Spain,2021-2022,Real Madrid
+La Liga,Spain,2022-2023,Barcelona
+La Liga,Spain,2023-2024,Real Madrid
+Serie A,Italy,2019-2020,Juventus
+Serie A,Italy,2020-2021,Inter
+Serie A,Italy,2021-2022,AC Milan
+Serie A,Italy,2022-2023,Napoli
+Serie A,Italy,2023-2024,Inter
+Bundesliga,Germany,2019-2020,Bayern Munich
+Bundesliga,Germany,2020-2021,Bayern Munich
+Bundesliga,Germany,2021-2022,Bayern Munich
+Bundesliga,Germany,2022-2023,Bayern Munich
+Bundesliga,Germany,2023-2024,Bayer Leverkusen
+Ligue 1,France,2019-2020,Paris Saint-Germain
+Ligue 1,France,2020-2021,Lille
+Ligue 1,France,2021-2022,Paris Saint-Germain
+Ligue 1,France,2022-2023,Paris Saint-Germain
+Ligue 1,France,2023-2024,Paris Saint-Germain
+Eredivisie,Netherlands,2018-2019,Ajax
+Eredivisie,Netherlands,2020-2021,Ajax
+Eredivisie,Netherlands,2021-2022,Ajax
+Eredivisie,Netherlands,2022-2023,Feyenoord
+Eredivisie,Netherlands,2023-2024,PSV Eindhoven
+Primeira Liga,Portugal,2019-2020,Porto
+Primeira Liga,Portugal,2020-2021,Sporting CP
+Primeira Liga,Portugal,2021-2022,Porto
+Primeira Liga,Portugal,2022-2023,Benfica
+Primeira Liga,Portugal,2023-2024,Sporting CP
+Süper Lig,Turkey,2019-2020,İstanbul Başakşehir
+Süper Lig,Turkey,2020-2021,Beşiktaş
+Süper Lig,Turkey,2021-2022,Trabzonspor
+Süper Lig,Turkey,2022-2023,Galatasaray
+Süper Lig,Turkey,2023-2024,Galatasaray
+Belgian Pro League,Belgium,2019-2020,Club Brugge
+Belgian Pro League,Belgium,2020-2021,Club Brugge
+Belgian Pro League,Belgium,2021-2022,Club Brugge
+Belgian Pro League,Belgium,2022-2023,Royal Antwerp
+Belgian Pro League,Belgium,2023-2024,Club Brugge
