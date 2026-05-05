@@ -1,0 +1,271 @@
+league,league_country,season,team,variable,source_name,source_link,notes
+Belgian Pro League,Belgium,2019-2020,Club Brugge,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Belgian Pro League,Belgium,2019-2020,Club Brugge,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Belgian Pro League,Belgium,2019-2020,Club Brugge,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Belgian Pro League,Belgium,2019-2020,Club Brugge,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Belgian Pro League,Belgium,2019-2020,Club Brugge,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Belgian Pro League,Belgium,2019-2020,Club Brugge,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Belgian Pro League,Belgium,2020-2021,Club Brugge,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Belgian Pro League,Belgium,2020-2021,Club Brugge,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Belgian Pro League,Belgium,2020-2021,Club Brugge,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Belgian Pro League,Belgium,2020-2021,Club Brugge,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Belgian Pro League,Belgium,2020-2021,Club Brugge,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Belgian Pro League,Belgium,2020-2021,Club Brugge,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Belgian Pro League,Belgium,2021-2022,Club Brugge,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Belgian Pro League,Belgium,2021-2022,Club Brugge,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Belgian Pro League,Belgium,2021-2022,Club Brugge,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Belgian Pro League,Belgium,2021-2022,Club Brugge,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Belgian Pro League,Belgium,2021-2022,Club Brugge,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Belgian Pro League,Belgium,2021-2022,Club Brugge,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Belgian Pro League,Belgium,2022-2023,Royal Antwerp,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Belgian Pro League,Belgium,2022-2023,Royal Antwerp,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Belgian Pro League,Belgium,2022-2023,Royal Antwerp,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Belgian Pro League,Belgium,2022-2023,Royal Antwerp,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Belgian Pro League,Belgium,2022-2023,Royal Antwerp,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Belgian Pro League,Belgium,2022-2023,Royal Antwerp,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Belgian Pro League,Belgium,2023-2024,Club Brugge,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Belgian Pro League,Belgium,2023-2024,Club Brugge,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Belgian Pro League,Belgium,2023-2024,Club Brugge,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Belgian Pro League,Belgium,2023-2024,Club Brugge,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Belgian Pro League,Belgium,2023-2024,Club Brugge,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Belgian Pro League,Belgium,2023-2024,Club Brugge,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Bundesliga,Germany,2019-2020,Bayern Munich,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Bundesliga,Germany,2019-2020,Bayern Munich,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Bundesliga,Germany,2019-2020,Bayern Munich,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Bundesliga,Germany,2019-2020,Bayern Munich,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Bundesliga,Germany,2019-2020,Bayern Munich,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Bundesliga,Germany,2019-2020,Bayern Munich,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Bundesliga,Germany,2020-2021,Bayern Munich,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Bundesliga,Germany,2020-2021,Bayern Munich,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Bundesliga,Germany,2020-2021,Bayern Munich,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Bundesliga,Germany,2020-2021,Bayern Munich,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Bundesliga,Germany,2020-2021,Bayern Munich,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Bundesliga,Germany,2020-2021,Bayern Munich,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Bundesliga,Germany,2021-2022,Bayern Munich,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Bundesliga,Germany,2021-2022,Bayern Munich,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Bundesliga,Germany,2021-2022,Bayern Munich,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Bundesliga,Germany,2021-2022,Bayern Munich,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Bundesliga,Germany,2021-2022,Bayern Munich,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Bundesliga,Germany,2021-2022,Bayern Munich,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Bundesliga,Germany,2022-2023,Bayern Munich,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Bundesliga,Germany,2022-2023,Bayern Munich,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Bundesliga,Germany,2022-2023,Bayern Munich,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Bundesliga,Germany,2022-2023,Bayern Munich,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Bundesliga,Germany,2022-2023,Bayern Munich,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Bundesliga,Germany,2022-2023,Bayern Munich,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Bundesliga,Germany,2023-2024,Bayer Leverkusen,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Bundesliga,Germany,2023-2024,Bayer Leverkusen,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Bundesliga,Germany,2023-2024,Bayer Leverkusen,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Bundesliga,Germany,2023-2024,Bayer Leverkusen,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Bundesliga,Germany,2023-2024,Bayer Leverkusen,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Bundesliga,Germany,2023-2024,Bayer Leverkusen,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Eredivisie,Netherlands,2018-2019,Ajax,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Eredivisie,Netherlands,2018-2019,Ajax,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Eredivisie,Netherlands,2018-2019,Ajax,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Eredivisie,Netherlands,2018-2019,Ajax,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Eredivisie,Netherlands,2018-2019,Ajax,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Eredivisie,Netherlands,2018-2019,Ajax,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Eredivisie,Netherlands,2020-2021,Ajax,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Eredivisie,Netherlands,2020-2021,Ajax,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Eredivisie,Netherlands,2020-2021,Ajax,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Eredivisie,Netherlands,2020-2021,Ajax,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Eredivisie,Netherlands,2020-2021,Ajax,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Eredivisie,Netherlands,2020-2021,Ajax,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Eredivisie,Netherlands,2021-2022,Ajax,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Eredivisie,Netherlands,2021-2022,Ajax,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Eredivisie,Netherlands,2021-2022,Ajax,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Eredivisie,Netherlands,2021-2022,Ajax,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Eredivisie,Netherlands,2021-2022,Ajax,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Eredivisie,Netherlands,2021-2022,Ajax,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Eredivisie,Netherlands,2022-2023,Feyenoord,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Eredivisie,Netherlands,2022-2023,Feyenoord,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Eredivisie,Netherlands,2022-2023,Feyenoord,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Eredivisie,Netherlands,2022-2023,Feyenoord,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Eredivisie,Netherlands,2022-2023,Feyenoord,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Eredivisie,Netherlands,2022-2023,Feyenoord,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Eredivisie,Netherlands,2023-2024,PSV Eindhoven,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Eredivisie,Netherlands,2023-2024,PSV Eindhoven,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Eredivisie,Netherlands,2023-2024,PSV Eindhoven,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Eredivisie,Netherlands,2023-2024,PSV Eindhoven,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Eredivisie,Netherlands,2023-2024,PSV Eindhoven,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Eredivisie,Netherlands,2023-2024,PSV Eindhoven,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+La Liga,Spain,2019-2020,Real Madrid,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+La Liga,Spain,2019-2020,Real Madrid,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+La Liga,Spain,2019-2020,Real Madrid,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+La Liga,Spain,2019-2020,Real Madrid,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+La Liga,Spain,2019-2020,Real Madrid,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+La Liga,Spain,2019-2020,Real Madrid,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+La Liga,Spain,2020-2021,Atletico Madrid,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+La Liga,Spain,2020-2021,Atletico Madrid,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+La Liga,Spain,2020-2021,Atletico Madrid,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+La Liga,Spain,2020-2021,Atletico Madrid,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+La Liga,Spain,2020-2021,Atletico Madrid,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+La Liga,Spain,2020-2021,Atletico Madrid,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+La Liga,Spain,2021-2022,Real Madrid,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+La Liga,Spain,2021-2022,Real Madrid,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+La Liga,Spain,2021-2022,Real Madrid,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+La Liga,Spain,2021-2022,Real Madrid,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+La Liga,Spain,2021-2022,Real Madrid,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+La Liga,Spain,2021-2022,Real Madrid,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+La Liga,Spain,2022-2023,Barcelona,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+La Liga,Spain,2022-2023,Barcelona,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+La Liga,Spain,2022-2023,Barcelona,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+La Liga,Spain,2022-2023,Barcelona,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+La Liga,Spain,2022-2023,Barcelona,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+La Liga,Spain,2022-2023,Barcelona,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+La Liga,Spain,2023-2024,Real Madrid,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+La Liga,Spain,2023-2024,Real Madrid,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+La Liga,Spain,2023-2024,Real Madrid,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+La Liga,Spain,2023-2024,Real Madrid,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+La Liga,Spain,2023-2024,Real Madrid,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+La Liga,Spain,2023-2024,Real Madrid,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Ligue 1,France,2019-2020,Paris Saint-Germain,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Ligue 1,France,2019-2020,Paris Saint-Germain,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Ligue 1,France,2019-2020,Paris Saint-Germain,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Ligue 1,France,2019-2020,Paris Saint-Germain,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Ligue 1,France,2019-2020,Paris Saint-Germain,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Ligue 1,France,2019-2020,Paris Saint-Germain,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Ligue 1,France,2020-2021,Lille,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Ligue 1,France,2020-2021,Lille,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Ligue 1,France,2020-2021,Lille,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Ligue 1,France,2020-2021,Lille,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Ligue 1,France,2020-2021,Lille,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Ligue 1,France,2020-2021,Lille,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Ligue 1,France,2021-2022,Paris Saint-Germain,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Ligue 1,France,2021-2022,Paris Saint-Germain,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Ligue 1,France,2021-2022,Paris Saint-Germain,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Ligue 1,France,2021-2022,Paris Saint-Germain,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Ligue 1,France,2021-2022,Paris Saint-Germain,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Ligue 1,France,2021-2022,Paris Saint-Germain,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Ligue 1,France,2022-2023,Paris Saint-Germain,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Ligue 1,France,2022-2023,Paris Saint-Germain,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Ligue 1,France,2022-2023,Paris Saint-Germain,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Ligue 1,France,2022-2023,Paris Saint-Germain,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Ligue 1,France,2022-2023,Paris Saint-Germain,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Ligue 1,France,2022-2023,Paris Saint-Germain,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Ligue 1,France,2023-2024,Paris Saint-Germain,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Ligue 1,France,2023-2024,Paris Saint-Germain,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Ligue 1,France,2023-2024,Paris Saint-Germain,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Ligue 1,France,2023-2024,Paris Saint-Germain,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Ligue 1,France,2023-2024,Paris Saint-Germain,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Ligue 1,France,2023-2024,Paris Saint-Germain,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Premier League,England,2019-2020,Liverpool,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Premier League,England,2019-2020,Liverpool,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Premier League,England,2019-2020,Liverpool,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Premier League,England,2019-2020,Liverpool,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Premier League,England,2019-2020,Liverpool,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Premier League,England,2019-2020,Liverpool,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Premier League,England,2020-2021,Manchester City,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Premier League,England,2020-2021,Manchester City,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Premier League,England,2020-2021,Manchester City,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Premier League,England,2020-2021,Manchester City,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Premier League,England,2020-2021,Manchester City,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Premier League,England,2020-2021,Manchester City,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Premier League,England,2021-2022,Manchester City,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Premier League,England,2021-2022,Manchester City,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Premier League,England,2021-2022,Manchester City,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Premier League,England,2021-2022,Manchester City,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Premier League,England,2021-2022,Manchester City,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Premier League,England,2021-2022,Manchester City,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Premier League,England,2022-2023,Manchester City,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Premier League,England,2022-2023,Manchester City,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Premier League,England,2022-2023,Manchester City,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Premier League,England,2022-2023,Manchester City,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Premier League,England,2022-2023,Manchester City,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Premier League,England,2022-2023,Manchester City,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Premier League,England,2023-2024,Manchester City,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Premier League,England,2023-2024,Manchester City,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Premier League,England,2023-2024,Manchester City,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Premier League,England,2023-2024,Manchester City,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Premier League,England,2023-2024,Manchester City,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Premier League,England,2023-2024,Manchester City,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Primeira Liga,Portugal,2019-2020,Porto,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Primeira Liga,Portugal,2019-2020,Porto,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Primeira Liga,Portugal,2019-2020,Porto,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Primeira Liga,Portugal,2019-2020,Porto,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Primeira Liga,Portugal,2019-2020,Porto,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Primeira Liga,Portugal,2019-2020,Porto,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Primeira Liga,Portugal,2020-2021,Sporting CP,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Primeira Liga,Portugal,2020-2021,Sporting CP,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Primeira Liga,Portugal,2020-2021,Sporting CP,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Primeira Liga,Portugal,2020-2021,Sporting CP,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Primeira Liga,Portugal,2020-2021,Sporting CP,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Primeira Liga,Portugal,2020-2021,Sporting CP,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Primeira Liga,Portugal,2021-2022,Porto,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Primeira Liga,Portugal,2021-2022,Porto,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Primeira Liga,Portugal,2021-2022,Porto,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Primeira Liga,Portugal,2021-2022,Porto,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Primeira Liga,Portugal,2021-2022,Porto,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Primeira Liga,Portugal,2021-2022,Porto,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Primeira Liga,Portugal,2022-2023,Benfica,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Primeira Liga,Portugal,2022-2023,Benfica,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Primeira Liga,Portugal,2022-2023,Benfica,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Primeira Liga,Portugal,2022-2023,Benfica,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Primeira Liga,Portugal,2022-2023,Benfica,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Primeira Liga,Portugal,2022-2023,Benfica,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Primeira Liga,Portugal,2023-2024,Sporting CP,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Primeira Liga,Portugal,2023-2024,Sporting CP,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Primeira Liga,Portugal,2023-2024,Sporting CP,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Primeira Liga,Portugal,2023-2024,Sporting CP,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Primeira Liga,Portugal,2023-2024,Sporting CP,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Primeira Liga,Portugal,2023-2024,Sporting CP,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Serie A,Italy,2019-2020,Juventus,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Serie A,Italy,2019-2020,Juventus,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Serie A,Italy,2019-2020,Juventus,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Serie A,Italy,2019-2020,Juventus,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Serie A,Italy,2019-2020,Juventus,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Serie A,Italy,2019-2020,Juventus,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Serie A,Italy,2020-2021,Inter,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Serie A,Italy,2020-2021,Inter,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Serie A,Italy,2020-2021,Inter,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Serie A,Italy,2020-2021,Inter,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Serie A,Italy,2020-2021,Inter,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Serie A,Italy,2020-2021,Inter,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Serie A,Italy,2021-2022,AC Milan,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Serie A,Italy,2021-2022,AC Milan,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Serie A,Italy,2021-2022,AC Milan,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Serie A,Italy,2021-2022,AC Milan,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Serie A,Italy,2021-2022,AC Milan,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Serie A,Italy,2021-2022,AC Milan,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Serie A,Italy,2022-2023,Napoli,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Serie A,Italy,2022-2023,Napoli,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Serie A,Italy,2022-2023,Napoli,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Serie A,Italy,2022-2023,Napoli,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Serie A,Italy,2022-2023,Napoli,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Serie A,Italy,2022-2023,Napoli,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Serie A,Italy,2023-2024,Inter,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Serie A,Italy,2023-2024,Inter,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Serie A,Italy,2023-2024,Inter,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Serie A,Italy,2023-2024,Inter,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Serie A,Italy,2023-2024,Inter,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Serie A,Italy,2023-2024,Inter,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Süper Lig,Turkey,2019-2020,İstanbul Başakşehir,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Süper Lig,Turkey,2019-2020,İstanbul Başakşehir,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Süper Lig,Turkey,2019-2020,İstanbul Başakşehir,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Süper Lig,Turkey,2019-2020,İstanbul Başakşehir,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Süper Lig,Turkey,2019-2020,İstanbul Başakşehir,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Süper Lig,Turkey,2019-2020,İstanbul Başakşehir,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Süper Lig,Turkey,2020-2021,Beşiktaş,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Süper Lig,Turkey,2020-2021,Beşiktaş,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Süper Lig,Turkey,2020-2021,Beşiktaş,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Süper Lig,Turkey,2020-2021,Beşiktaş,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Süper Lig,Turkey,2020-2021,Beşiktaş,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Süper Lig,Turkey,2020-2021,Beşiktaş,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Süper Lig,Turkey,2021-2022,Trabzonspor,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Süper Lig,Turkey,2021-2022,Trabzonspor,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Süper Lig,Turkey,2021-2022,Trabzonspor,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Süper Lig,Turkey,2021-2022,Trabzonspor,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Süper Lig,Turkey,2021-2022,Trabzonspor,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Süper Lig,Turkey,2021-2022,Trabzonspor,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Süper Lig,Turkey,2022-2023,Galatasaray,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Süper Lig,Turkey,2022-2023,Galatasaray,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Süper Lig,Turkey,2022-2023,Galatasaray,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Süper Lig,Turkey,2022-2023,Galatasaray,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Süper Lig,Turkey,2022-2023,Galatasaray,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Süper Lig,Turkey,2022-2023,Galatasaray,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
+Süper Lig,Turkey,2023-2024,Galatasaray,coach_name,games.csv,,Extracted from home_club_manager_name / away_club_manager_name fields
+Süper Lig,Turkey,2023-2024,Galatasaray,coach_nationality,manual coach lookup,,Assigned from manually built coach nationality lookup table
+Süper Lig,Turkey,2023-2024,Galatasaray,domestic_coach,derived from coach nationality,,1 if coach nationality matches league country; otherwise 0
+Süper Lig,Turkey,2023-2024,Galatasaray,dominant_formation,games.csv,,Most frequent team-side formation across league matches
+Süper Lig,Turkey,2023-2024,Galatasaray,back_four_rate,games.csv,,Share of league matches where formation starts with 4
+Süper Lig,Turkey,2023-2024,Galatasaray,avg_age,appearances.csv + players.csv,,Minutes-weighted average squad age
