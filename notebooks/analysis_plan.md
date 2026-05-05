@@ -1,46 +1,54 @@
 # Analysis Plan
 
-## April 14 Milestone
-This milestone covers:
-- data collection
-- exploratory data analysis
-- hypothesis testing
+## Project Direction
+This project focuses on profiling championship-winning football teams across multiple leagues and countries.
 
 ## Unit of Analysis
-For each selected league-season pair, the analysis compares:
-- champion team
-- runner-up team
+Each observation represents one champion team in one league-season.
 
 ## Variables to Collect
-1. Total wage bill
-2. Rotation size
-3. 4-3-3 usage rate
-4. Average squad age
+1. Coach nationality
+2. Domestic coach indicator
+3. Dominant formation
+4. Back-four usage rate
+5. Average squad age
 
-## Hypotheses
+## Research Questions
+### RQ1
+Do championship-winning teams tend to work with domestic coaches?
+
+### RQ2
+Do championship-winning teams tend to prefer back-four defensive systems?
+
+### RQ3
+What kind of age profile is commonly observed among championship-winning teams?
+
+## Working Hypotheses
 ### H1
-Champions and runner-up teams do not differ significantly in total wage bill.
+A majority of championship-winning teams are managed by domestic coaches.
 
 ### H2
-Champions do not use a significantly wider rotation than runner-up teams.
+A majority of championship-winning teams primarily use back-four formations.
 
 ### H3
-Champions use the 4-3-3 formation in a larger share of matches than runner-up teams.
+Championship-winning teams tend to have relatively experienced squads in terms of average age.
 
-### H4
-Champions have a higher average squad age than runner-up teams.
+## Planned Analysis
+- frequency tables
+- bar charts
+- distribution plots
+- summary statistics
+- simple proportion-based evaluation for categorical hypotheses
 
-## Planned Statistical Tests
-- Paired t-test
-- Wilcoxon signed-rank test (if needed)
-
-## Output
-A final dataset with one row per team-season and columns for:
+## Output Dataset
+The processed dataset will include:
 - league
 - season
 - team
-- rank
-- wage_bill
-- rotation_size
-- formation_433_rate
+- coach_name
+- coach_nationality
+- domestic_coach
+- dominant_formation
+- back_four_rate
 - avg_age
+- source_notes
