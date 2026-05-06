@@ -1,0 +1,7 @@
+hypothesis,test,statistic,p_value,decision_0_05
+H1 Domestic coach,Exact binomial test,29/45 = 0.6444,0.03622713008127221,Reject H0
+H2 Back-four rate,One-sample t-test vs 0.5,t(44) = 6.0595,1.3795206777580224e-07,Reject H0
+H2 Back-four rate,Wilcoxon signed-rank vs 0.5,W = 842.0,1.5394678280548286e-05,Reject H0
+H2 Dominant formation starts with 4,Exact binomial test,37/45 = 0.8222,7.687045098236922e-06,Reject H0
+H3 Age profile,Descriptive summary + 95% CI,"mean=27.0985, sd=1.2643, CI=[26.7186, 27.4783]",,Use descriptive inference
+H3 Optional benchmark,One-sample t-test vs 27.0,t(44) = 0.5224,0.6039841166050206,Fail to reject H0
