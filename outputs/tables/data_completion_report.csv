@@ -1,0 +1,12 @@
+column,non_null_count,null_count,completion_rate
+league,45,0,1.0
+league_country,45,0,1.0
+season,45,0,1.0
+team,45,0,1.0
+coach_name,45,0,1.0
+coach_nationality,45,0,1.0
+domestic_coach,45,0,1.0
+dominant_formation,45,0,1.0
+back_four_rate,45,0,1.0
+avg_age,45,0,1.0
+source_notes,45,0,1.0

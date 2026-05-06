@@ -1,0 +1,11 @@
+metric,value
+number_of_observations,45.0
+domestic_coach_rate,0.6444444444444445
+avg_age_mean,27.098464810872837
+avg_age_median,27.10994243252929
+avg_age_min,23.95605466462629
+avg_age_max,30.57925974047882
+back_four_rate_mean,0.8004585048377084
+back_four_rate_median,1.0
+back_four_rate_min,0.0
+back_four_rate_max,1.0
