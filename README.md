@@ -1,47 +1,86 @@
-# DSA210 Term Project  
-## Profiling Championship-Winning Football Teams Across Leagues
+# DSA210_TermProject  
+# Profiling Championship-Winning Football Teams Across Leagues
 
-### Project Overview
-This project investigates whether championship-winning football teams across different countries share a common profile.  
-Instead of comparing only champions and runners-up inside a single league, the project focuses on **league champions** from multiple countries and seasons, and asks whether these teams display recurring managerial, tactical, and squad-level patterns.
+DSA 210 - Introduction to Data Science  
+Spring 2025-2026  
+Sabancı University  
+Student: Sancar Tegin Gökçe
 
-The main goal is to identify whether title-winning teams tend to:
-- work with **domestic coaches**,
-- prefer **back-four defensive structures**,
-- and share a similar **average squad age profile**.
+* * *
+
+This repository contains the full technical implementation, datasets, statistical tests, exploratory analysis, and machine learning outputs for the project.  
+The aim of the project is to identify whether championship-winning football teams across multiple leagues share a common managerial, tactical, and squad-level profile.
 
 ---
 
-## Research Questions
+## Project Overview
 
-### RQ1
-Do championship-winning teams tend to work with domestic coaches?
+This project investigates whether league champions across Europe and Turkey display recurring structural patterns.  
+Instead of comparing only champions and runners-up within one league, the project directly focuses on **championship-winning teams** from multiple countries and seasons, and asks whether they share a broader “champion profile.”
 
-- **H0:** Coach nationality is not meaningfully associated with championship-winning teams.
+The analysis is built around three core dimensions:
+
+- **Managerial profile** → domestic vs foreign coach  
+- **Tactical profile** → dominant formation and back-four usage  
+- **Squad profile** → average age  
+
+### Central Question
+> Is there a cross-league “champion profile” in terms of coach background, tactical structure, and squad age?
+
+* * *
+
+## Motivation
+
+Football analysis often focuses on team quality, individual talent, or financial strength. However, title-winning teams may also share hidden structural similarities that are not immediately visible from points tables alone.
+
+This project was motivated by three broad questions:
+
+1. Do champions tend to work with **domestic coaches**?
+2. Do champions tend to prefer **back-four defensive systems**?
+3. Do champions cluster around a specific **average age profile**?
+
+The goal is not to claim that these factors *cause* championships on their own, but to investigate whether they repeatedly appear among title-winning teams across different leagues and seasons.
+
+* * *
+
+## Research Questions and Hypotheses
+
+### H1 — Domestic Coach Hypothesis
+- **H0:** Coach nationality has no meaningful association with championship-winning teams.
 - **H1:** Championship-winning teams tend to work with domestic coaches.
 
-### RQ2
-Do championship-winning teams tend to prefer back-four defensive systems?
-
-- **H0:** Defensive shape has no meaningful relationship with championship-winning teams.
+### H2 — Back-Four Hypothesis
+- **H0:** Defensive shape has no meaningful association with championship-winning teams.
 - **H2:** Championship-winning teams tend to use back-four systems more frequently.
 
-### RQ3
-Is there a common age profile among championship-winning teams?
+### H3 — Age Profile Hypothesis
+- **H0:** Average squad age does not display a meaningful pattern among championship-winning teams.
+- **H3:** Championship-winning teams tend to cluster around a common age profile.
 
-- **H0:** Average squad age does not show a meaningful pattern among champions.
-- **H3:** Championship-winning teams tend to cluster around a specific age profile.
+* * *
 
----
+## Main Findings (Summary)
 
-## Unit of Analysis
-Each observation represents **one league champion in one league-season**.
+| Hypothesis | Result | P-value / Evidence | Key Insight |
+|---|---:|---:|---|
+| **H1: Champions tend to work with domestic coaches** | ⚠️ Weakly Supported | Exact binomial test: **p = 0.0362** | 29 of 45 champions had domestic coaches, but the margin is not overwhelming |
+| **H2: Champions tend to prefer back-four systems** | ✅ Strongly Supported | t-test: **p = 1.38e-07**; Wilcoxon: **p = 1.54e-05** | Champions overwhelmingly use back-four structures |
+| **H2b: Dominant formation starts with 4** | ✅ Strongly Supported | Exact binomial test: **p = 7.69e-06** | 37 of 45 champion teams had a dominant formation beginning with 4 |
+| **H3: Champions share a common age profile** | ✅ Descriptively Supported | Mean = **27.10**, 95% CI = **[26.72, 27.48]** | Champion teams cluster in a relatively narrow age band |
+| **ML Stage: Unsupervised champion profiling** | ✅ Completed | K-Means + PCA + Hierarchical Clustering | Latent champion archetypes were explored through clustering |
 
----
+**Overall interpretation:**  
+The strongest evidence appears in the **tactical dimension**.  
+The **domestic-coach hypothesis** receives some support, but not strong enough to be treated as a dominant finding.  
+The **age hypothesis** is better interpreted as a descriptive concentration rather than as a sharp inferential result.
+
+* * *
 
 ## Dataset
-The final dataset contains champion teams from the following leagues:
 
+The final dataset contains **45 observations**, where each observation corresponds to **one champion team in one league-season**.
+
+### Leagues included
 - Premier League
 - La Liga
 - Serie A
@@ -52,131 +91,197 @@ The final dataset contains champion teams from the following leagues:
 - Süper Lig
 - Belgian Pro League
 
-The dataset includes **45 observations** in total and covers mostly the **2019–2020 to 2023–2024** seasons, with Eredivisie also including **2018–2019**. The final table includes the following columns: `league`, `league_country`, `season`, `team`, `coach_name`, `coach_nationality`, `domestic_coach`, `dominant_formation`, `back_four_rate`, `avg_age`, and `source_notes`. :contentReference[oaicite:0]{index=0}
+### Time coverage
+The dataset mainly covers the **2019-2020 to 2023-2024** seasons, with Eredivisie also including **2018-2019**.
 
----
+### Final variables
+- `league`
+- `league_country`
+- `season`
+- `team`
+- `coach_name`
+- `coach_nationality`
+- `domestic_coach`
+- `dominant_formation`
+- `back_four_rate`
+- `avg_age`
+- `source_notes`
 
-## Variables
-
-### Core variables
-- **coach_name**: Head coach of the champion team
-- **coach_nationality**: Nationality of the coach
-- **domestic_coach**: Binary indicator showing whether the coach nationality matches the league country
-- **dominant_formation**: Most frequently observed formation used by the champion team
-- **back_four_rate**: Share of matches in which the team used a formation beginning with “4”
-- **avg_age**: Minutes-weighted average squad age
-
----
+* * *
 
 ## Data Sources
-This project combines automated extraction and manual enrichment.
+
+The project combines automated extraction and manual enrichment.
 
 ### Automated sources
-- `games.csv`
-  - used for coach name
-  - used for dominant formation
-  - used for back-four rate
+- **games.csv**
+  - `coach_name`
+  - `dominant_formation`
+  - `back_four_rate`
 
-- `appearances.csv` + `players.csv`
-  - used to calculate minutes-weighted average age
+- **appearances.csv + players.csv**
+  - `avg_age` (minutes-weighted average age)
 
 ### Manual enrichment
-- `coach_nationality` was added through a manually constructed coach lookup table
-- `domestic_coach` was derived by comparing coach nationality to league country
+- `coach_nationality` was added via a manually constructed coach lookup table
+- `domestic_coach` was derived by comparing coach nationality with league country
 
-Source tracking for each variable is documented in:
+### Data tracking
+The variable-level documentation is stored in:
+
 - `data/raw/source_tracking.csv`
 
----
+* * *
 
-## Methodology
+## Data Collection and Processing
 
-### 1. Team selection
-A champion list was manually defined in `target_teams.csv`.
+### 1. Champion list creation
+A target champion list was first defined in `target_teams.csv`.
 
-### 2. Data extraction
-Relevant records were filtered from large football datasets using:
-- competition code
-- season
-- champion club identity
+### 2. Team matching
+Because team names differ across datasets, a hybrid matching pipeline was built using:
+- competition-based filtering
+- season filtering
+- fuzzy matching
+- manual club ID overrides
+- post-processing validation
 
-### 3. Team matching
-Because team names vary across sources, a hybrid matching strategy was used:
-- fuzzy matching,
-- manual club ID overrides for difficult cases,
-- post-processing validation.
-
-### 4. Variable construction
+### 3. Variable construction
 - **coach_name** was extracted from manager fields in match-level data
-- **dominant_formation** was defined as the most common team-side formation
-- **back_four_rate** was computed as the proportion of matches where formation starts with `4`
-- **avg_age** was calculated as a minutes-weighted average based on player appearances and birth dates
-- **domestic_coach** was generated after nationality merge
+- **dominant_formation** was defined as the most frequent formation used by the champion team
+- **back_four_rate** was computed as the proportion of league matches where the formation begins with `4`
+- **avg_age** was calculated as a minutes-weighted squad age
+- **coach_nationality** was added manually
+- **domestic_coach** was generated as a binary indicator
 
-### 5. Exploratory analysis
-Summary tables and figures were created to inspect:
-- completeness of the final dataset,
-- distribution of coach nationalities,
-- distribution of domestic vs foreign coaches,
-- dominant formation frequencies,
-- average age distribution,
-- back-four rate distribution.
+### 4. Final data validation
+After patching and validation, **no unmatched team remained in the final pipeline**.
 
----
+* * *
 
-## Outputs
+## Exploratory Data Analysis (EDA)
 
-### Tables
-Located in `outputs/tables/`:
-- `data_completion_report.csv`
-- `profile_summary.csv`
-- `coach_nationality_counts.csv`
-- `dominant_formation_counts.csv`
-- `domestic_coach_counts.csv`
+The EDA stage focused on both data quality and distributional structure.
 
-### Figures
-Located in `outputs/figures/`:
-- `domestic_vs_foreign_coaches.png`
-- `dominant_formations.png`
-- `avg_age_distribution.png`
-- `back_four_rate_distribution.png`
+### Outputs produced
+- data completion report
+- coach nationality counts
+- domestic vs foreign coach counts
+- dominant formation counts
+- average age distribution
+- back-four rate distribution
 
----
+### Descriptive observations
+- The final dataset is complete for the final variables used in analysis
+- **29** champions were coached by domestic managers, **16** by foreign managers
+- The most common dominant formations are:
+  - `4-3-3 Attacking`
+  - `4-2-3-1`
+  - `4-3-3 Defending`
+- Average squad age is mostly concentrated between roughly **26 and 28**
+- Back-four usage is heavily concentrated near **1.0**, indicating that many champions relied on four-man defensive structures
 
-## Current Findings
-At the current stage, the dataset suggests a few clear patterns:
+* * *
 
-- The final dataset contains **45 complete observations**. :contentReference[oaicite:1]{index=1}
-- Among champion teams, **29** are coached by domestic managers and **16** by foreign managers. :contentReference[oaicite:2]{index=2}
-- The most common dominant formations are led by **4-3-3 Attacking** and **4-2-3-1**. :contentReference[oaicite:3]{index=3}
-- Back-four usage is highly concentrated near **1.0**, suggesting that many champions relied heavily on four-man defensive structures. 
-- Average squad age is concentrated mostly in the **mid-to-late twenties**, rather than at very low or very high values. :contentReference[oaicite:5]{index=5}
+## Hypothesis Testing
 
-These findings are exploratory and are intended to motivate the final interpretation rather than serve as definitive causal conclusions.
+### H1 — Domestic Coach Hypothesis
 
----
+- **H0:** Championship-winning teams do not meaningfully favor domestic coaches  
+- **H1:** Championship-winning teams tend to work with domestic coaches
 
-## Limitations
-This project has several limitations:
+#### Test used
+- Exact binomial test against 0.5 benchmark
 
-- The dataset is relatively small (**45 observations**).
-- `coach_nationality` was manually enriched rather than directly scraped from one unified source.
-- Team-name inconsistencies across sources required manual matching corrections.
-- Formation labels are not perfectly standardized (for example, `4-3-3 Attacking` and `4-3-3 Defending` are treated separately).
-- The study is descriptive and exploratory; it does not establish causal effects.
+#### Result
+- Domestic coach count: **29 / 45 = 0.6444**
+- P-value: **0.0362**
+
+#### Interpretation
+This result suggests a tendency toward domestic coaches among champions, but the result is **not overwhelmingly strong**.  
+The observed split (29 vs 16) shows an imbalance, yet not a decisive one.
+
+> **H1 is weakly supported.**
 
 ---
 
-## Next Steps
-Possible extensions include:
+### H2 — Back-Four Hypothesis
 
-- standardizing formation labels into broader tactical families,
-- adding statistical hypothesis tests,
-- incorporating more leagues and earlier seasons,
-- comparing champions with runners-up or top-four teams,
-- examining whether coach nationality, tactical shape, and age profile interact with one another.
+- **H0:** Championship-winning teams do not meaningfully favor back-four systems  
+- **H2:** Championship-winning teams tend to prefer back-four systems
+
+#### Tests used
+- One-sample t-test vs 0.5
+- Wilcoxon signed-rank test vs 0.5
+- Exact binomial test for whether dominant formation starts with `4`
+
+#### Results
+- Mean `back_four_rate`: **0.8005**
+- One-sample t-test: **t(44) = 6.0595**, **p = 1.38e-07**
+- Wilcoxon signed-rank test: **W = 842.0**, **p = 1.54e-05**
+- Dominant formation starts with `4`: **37 / 45 = 0.8222**, **p = 7.69e-06**
+
+#### Interpretation
+This is the clearest result in the project.  
+Championship-winning teams overwhelmingly rely on back-four systems, both in match-level usage and in their dominant tactical identity.
+
+> **H2 is strongly supported.**
 
 ---
+
+### H3 — Age Profile Hypothesis
+
+- **H0:** Championship-winning teams do not display a meaningful common age profile  
+- **H3:** Championship-winning teams cluster around a common age profile
+
+#### Analysis used
+- Descriptive summary
+- 95% confidence interval
+- Optional benchmark t-test vs 27.0
+
+#### Results
+- Mean age: **27.0985**
+- Standard deviation: **1.2643**
+- 95% CI: **[26.7186, 27.4783]**
+- Optional benchmark test vs 27.0: **p = 0.6040**
+
+#### Interpretation
+The benchmark test against 27.0 is not significant, which is not a problem for the project’s main interpretation.  
+The more important result is that champion teams are concentrated in a **relatively narrow age range**, rather than being scattered widely across very young and very old profiles.
+
+> **H3 is descriptively supported.**
+
+* * *
+
+## Machine Learning Stage
+
+Since the dataset contains only championship-winning teams, supervised prediction was not appropriate at this stage.  
+Instead, the ML component focused on **unsupervised learning** to identify hidden champion archetypes.
+
+### Methods applied
+- **K-Means Clustering**
+- **Hierarchical Clustering**
+- **PCA (Principal Component Analysis)**
+
+### Features used
+- `domestic_coach`
+- `back_four_rate`
+- `avg_age`
+
+### Purpose
+The goal of the ML stage was not to predict championships, but to see whether champions themselves form distinct internal subgroups such as:
+
+- domestic-coach / back-four-heavy champions
+- foreign-coach / tactically flexible champions
+- older vs younger champion profiles
+
+### Outputs produced
+- K-Means model selection table
+- cluster summary table
+- PCA cluster visualization
+- hierarchical clustering dendrogram
+
+* * *
 
 ## Repository Structure
 
@@ -189,11 +294,26 @@ DSA210_TermProject/
 │   │   ├── source_tracking.csv
 │   │   └── transfermarkt/
 │   └── processed/
-│       └── champion_profile_dataset.csv
+│       ├── champion_profile_dataset.csv
+│       └── champion_profile_dataset_with_ml.csv
 │
 ├── outputs/
 │   ├── figures/
+│   │   ├── avg_age_distribution.png
+│   │   ├── back_four_rate_distribution.png
+│   │   ├── domestic_vs_foreign_coaches.png
+│   │   ├── dominant_formations.png
+│   │   ├── ml_pca_clusters.png
+│   │   └── ml_dendrogram.png
 │   └── tables/
+│       ├── data_completion_report.csv
+│       ├── profile_summary.csv
+│       ├── coach_nationality_counts.csv
+│       ├── dominant_formation_counts.csv
+│       ├── domestic_coach_counts.csv
+│       ├── hypothesis_test_results.csv
+│       ├── ml_cluster_summary.csv
+│       └── ml_kmeans_model_selection.csv
 │
 ├── src/
 │   ├── build_dataset.py
