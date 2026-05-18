@@ -20,6 +20,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -158,33 +159,57 @@
       background: rgba(255,255,255,0.03);
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: var(--card);
+    .quote {
+      border-left: 3px solid var(--accent);
+      padding-left: 14px;
+      color: var(--text);
+      margin: 14px 0 0;
     }
 
-    th, td {
-      text-align: left;
-      padding: 14px 14px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      vertical-align: top;
+    .figure-grid img {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      object-fit: contain;
+    }
+
+    .figure-caption {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .footer {
+      padding: 36px 0 60px;
+      color: var(--muted);
       font-size: 0.95rem;
     }
 
-    th {
-      color: var(--text);
-      background: rgba(255,255,255,0.04);
+    .small {
+      font-size: 0.92rem;
+      color: var(--muted);
     }
 
-    tr:last-child td { border-bottom: none; }
+    code.inline {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2px 6px;
+      color: var(--text);
+    }
 
-    .status-strong { color: #7ee787; font-weight: 700; }
-    .status-weak { color: #f2cc60; font-weight: 700; }
-    .status-desc { color: #9cc2ff; font-weight: 700; }
+    pre {
+      white-space: pre-wrap;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      overflow: auto;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
 
     .findings-table-wrapper {
       overflow-x: auto;
@@ -273,55 +298,25 @@
       font-weight: 700;
     }
 
-    .quote {
-      border-left: 3px solid var(--accent);
-      padding-left: 14px;
-      color: var(--text);
-      margin: 14px 0 0;
+    .ml-figure-grid .card {
+      padding: 24px;
     }
 
-    .figure-grid img {
+    .ml-figure-grid img {
       width: 100%;
+      object-fit: contain;
       display: block;
       border-radius: 18px;
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.02);
     }
 
-    .figure-caption {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-top: 8px;
+    .ml-pca-img {
+      max-height: 520px;
     }
 
-    .footer {
-      padding: 36px 0 60px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .small {
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    code.inline {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 2px 6px;
-      color: var(--text);
-    }
-
-    pre {
-      white-space: pre-wrap;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 18px;
-      overflow: auto;
-      color: var(--text);
-      font-size: 0.92rem;
+    .ml-dendrogram-img {
+      max-height: 650px;
     }
 
     @media (max-width: 940px) {
@@ -352,7 +347,7 @@
     <div class="container hero-grid">
       <div>
         <div class="eyebrow">DSA 210 · Spring 2025–2026 · Term Project</div>
-        <h1>Profiling Championship-Winning Football Teams Across Top 9 European Leagues</h1>
+        <h1>Profiling Championship-Winning Football Teams Across Leagues</h1>
         <p class="subtitle">
           A cross-league data science investigation into whether title-winning teams share a common profile in terms of coach background, tactical structure, and squad age.
         </p>
@@ -388,7 +383,7 @@
     <div class="container">
       <h2>Motivation</h2>
       <p class="section-intro">
-        Football analysis often focuses on player quality, transfer value, or match outcomes. This project asks a different question: do champions themselves display repeated structural patterns across leagues and seasons?
+        Football analysis often focuses on team quality, player quality, or financial strength. This project asks a different question: do champions themselves display repeated structural patterns across leagues and seasons?
       </p>
       <div class="grid-3">
         <div class="card">
@@ -487,6 +482,7 @@
       <p class="section-intro">
         The table below summarizes the main hypothesis-testing outcomes and the overall interpretation of each research question.
       </p>
+
       <div class="findings-table-wrapper">
         <table class="findings-table">
           <thead>
@@ -512,6 +508,7 @@
                 Domestic coaches are more common among champions, but the difference is not strong enough to be interpreted as a dominant pattern.
               </td>
             </tr>
+
             <tr>
               <td><strong>H2 — Back-Four Preference</strong></td>
               <td><span class="result-badge strong">Strongly Supported</span></td>
@@ -526,6 +523,7 @@
                 This is the strongest result in the project. Championship-winning teams overwhelmingly rely on back-four systems.
               </td>
             </tr>
+
             <tr>
               <td><strong>H2b — Dominant Formation Starts With 4</strong></td>
               <td><span class="result-badge strong">Strongly Supported</span></td>
@@ -540,6 +538,7 @@
                 The dominant tactical identity of most championship-winning teams begins with a back-four structure.
               </td>
             </tr>
+
             <tr>
               <td><strong>H3 — Age Profile</strong></td>
               <td><span class="result-badge descriptive">Descriptively Supported</span></td>
@@ -553,6 +552,7 @@
                 Champion teams cluster around a relatively narrow and stable age range, even though the result is better interpreted descriptively than inferentially.
               </td>
             </tr>
+
             <tr>
               <td><strong>ML Stage — Champion Profiling</strong></td>
               <td><span class="result-badge completed">Completed</span></td>
@@ -612,13 +612,14 @@
           <p>PCA projected champions into two dimensions to visualize latent groupings and champion archetypes.</p>
         </div>
       </div>
-      <div class="grid-2 figure-grid" style="margin-top:18px;">
+
+      <div class="grid-2 figure-grid ml-figure-grid" style="margin-top:18px;">
         <div class="card">
-          <img src="outputs/figures/ml_pca_clusters.png" alt="PCA clusters" />
+          <img class="ml-pca-img" src="outputs/figures/ml_pca_clusters.png" alt="PCA clusters" />
           <div class="figure-caption">PCA projection of champions colored by K-Means cluster.</div>
         </div>
         <div class="card">
-          <img src="outputs/figures/ml_dendrogram.png" alt="Hierarchical clustering dendrogram" />
+          <img class="ml-dendrogram-img" src="outputs/figures/ml_dendrogram.png" alt="Hierarchical clustering dendrogram" />
           <div class="figure-caption">Hierarchical clustering dendrogram showing relative structural similarity.</div>
         </div>
       </div>
@@ -647,24 +648,24 @@
     </div>
   </section>
 
- <section id="ai">
-  <div class="container">
-    <h2>AI Disclosure</h2>
-    <p class="section-intro">
-      Artificial intelligence was used in a supportive technical role during the development of this project through <strong>ChatGPT</strong>, mainly in the following areas:
-    </p>
-    <div class="card">
-      <ul>
-        <li><strong>Data Engineering and Debugging:</strong> Assisting with the restructuring and troubleshooting of Python scripts used for champion-team matching, manual club ID corrections, variable generation, and the integration of multiple football data sources.</li>
-        <li><strong>Statistical Analysis Architecture:</strong> Structuring the hypothesis-testing workflow in Python by translating statistical reasoning into executable procedures for binomial tests, one-sample t-tests, Wilcoxon signed-rank tests, and confidence interval estimation, while helping express these results in a formally written analytical framework.</li>
-        <li><strong>Project Website Development:</strong> Assisting with the organization, styling, and refinement of the HTML/CSS-based final project website, including the placement of visual outputs and report sections.</li>
-      </ul>
-      <p>
-        All research decisions, methodological design, hypothesis formulation, feature selection, result interpretation, and academic ownership remain entirely with the student.
+  <section id="ai">
+    <div class="container">
+      <h2>AI Disclosure</h2>
+      <p class="section-intro">
+        Artificial intelligence was used in a supportive technical role during the development of this project through <strong>ChatGPT</strong>, mainly in the following areas:
       </p>
+      <div class="card">
+        <ul>
+          <li><strong>Data Engineering and Debugging:</strong> Assisting with the restructuring and troubleshooting of Python scripts used for champion-team matching, manual club ID corrections, variable generation, and the integration of multiple football data sources.</li>
+          <li><strong>Statistical Analysis Architecture:</strong> Structuring the hypothesis-testing workflow in Python by translating statistical reasoning into executable procedures for binomial tests, one-sample t-tests, Wilcoxon signed-rank tests, and confidence interval estimation, while helping express these results in a formally written analytical framework.</li>
+          <li><strong>Project Website Development:</strong> Assisting with the organization, styling, and refinement of the HTML/CSS-based final project website, including the placement of visual outputs and report sections.</li>
+        </ul>
+        <p>
+          All research decisions, methodological design, hypothesis formulation, feature selection, result interpretation, and academic ownership remain entirely with the student.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="conclusion">
     <div class="container">
