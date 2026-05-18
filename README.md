@@ -1,10 +1,12 @@
 # DSA210_TermProject  
-# Profiling Championship-Winning Football Teams Across Leagues
+# Profiling Championship-Winning Football Teams Across Top 9 European Leagues
 
 DSA 210 - Introduction to Data Science  
 Spring 2025-2026  
 Sabancı University  
 Student: Sancar Tegin Gökçe
+
+🔗 **[View Final Project Report & Deploy Web Page](https://sancargokce.github.io/DSA210_TermProject/)**
 
 * * *
 
@@ -60,6 +62,8 @@ The goal is not to claim that these factors directly *cause* championships. Inst
 
 ## Main Findings (Summary)
 
+Detailed explanations, interactive charts, and deep dives can be found in the **[Main Findings Section of the Final Report](https://sancargokce.github.io/DSA210_TermProject/#findings)**.
+
 | Hypothesis | Result | Statistical Evidence | Interpretation |
 |---|---|---|---|
 | **H1: Champions tend to work with domestic coaches** | **Weakly Supported** | Exact binomial test: **p = 0.0362** | Domestic coaches are more common among champions, but the margin is not overwhelming |
@@ -68,8 +72,7 @@ The goal is not to claim that these factors directly *cause* championships. Inst
 | **H3: Champions share a common age profile** | **Descriptively Supported** | Mean = **27.10**, 95% CI = **[26.72, 27.48]** | Champions cluster in a relatively narrow age band |
 | **ML stage: Champion profiling** | **Completed** | K-Means + PCA + Hierarchical Clustering | Unsupervised learning identified latent champion archetypes |
 
-**Overall interpretation:**  
-The strongest evidence appears in the **tactical dimension**. The **domestic-coach hypothesis** receives some support, but not enough to be treated as a dominant finding. The **age hypothesis** is better interpreted descriptively than as a strong inferential claim.
+**Overall interpretation:** The strongest evidence appears in the **tactical dimension**. The **domestic-coach hypothesis** receives some support, but not enough to be treated as a dominant finding. The **age hypothesis** is better interpreted descriptively than as a strong inferential claim.
 
 * * *
 
@@ -330,6 +333,16 @@ This project has several limitations:
 
 * * *
 
+## AI Disclosure
+
+In accordance with academic integrity guidelines, Large Language Models (LLMs) were used during the development of this project. 
+
+- **Code Assistance:** LLMs were used to assist in writing, optimizing, and debugging Python data processing pipelines, statistical test scripts, and machine learning components.
+- **Writing & Formatting:** LLMs provided guidance on structuring narrative arguments, proofreading report text, and generating standard HTML/Markdown layouts for the documentation and final web deployment.
+- **Core Responsibility:** All data collection strategies, methodological decisions, statistical interpretations, and final analytical conclusions were designed, critically reviewed, and validated entirely by the author.
+
+* * *
+
 ## Future Work
 
 Possible extensions include:
@@ -368,4 +381,4 @@ The final analysis suggests that:
 - champion teams tend to cluster around a relatively stable **average age profile**
 - unsupervised machine learning methods reveal that champions are not all identical, but still group into interpretable structural archetypes
 
-Overall, the project shows that title-winning teams can be studied not only through points and results, but also through a broader structural profile combining coach background, tactical identity, and squad composition.
+For a full breakdown of the project development, methodologies, and visual insights, please check out the **[DSA210 Term Project Final Website](https://sancargokce.github.io/DSA210_TermProject/)**.
