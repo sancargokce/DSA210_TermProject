@@ -3,40 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DSA210 Final Report | Champion Profile</title>
+  <title>DSA210 Final Report | Champion Team Profile</title>
+
   <style>
     :root {
-      --bg: #071022;
-      --bg-2: #0b1630;
-      --bg-3: #101b38;
-      --card: rgba(18, 28, 58, 0.78);
-      --card-2: rgba(24, 37, 74, 0.82);
-      --text: #eef3ff;
-      --muted: #b8c5e6;
-      --soft: #8fa2cf;
-      --accent: #7aa2ff;
+      --bg: #040b18;
+      --bg-soft: #08142c;
+      --bg-card: rgba(11, 23, 49, 0.86);
+      --bg-card-2: rgba(16, 31, 63, 0.88);
+      --text: #eef4ff;
+      --muted: #b5c3e6;
+      --soft: #8da2d1;
+      --accent: #78a8ff;
       --accent-2: #4fd1c5;
-      --gold: #f5c028;
+      --gold: #f4c32e;
       --border: rgba(255,255,255,0.10);
-      --border-strong: rgba(255,255,255,0.16);
-      --shadow: 0 18px 40px rgba(0,0,0,0.32);
-      --shadow-soft: 0 10px 25px rgba(0,0,0,0.22);
+      --border-strong: rgba(255,255,255,0.18);
+      --shadow: 0 18px 40px rgba(0,0,0,0.34);
+      --shadow-soft: 0 10px 26px rgba(0,0,0,0.22);
       --radius: 24px;
       --maxw: 1180px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       color: var(--text);
       line-height: 1.65;
       background:
-        radial-gradient(circle at top left, rgba(33, 61, 123, 0.35), transparent 30%),
-        radial-gradient(circle at top right, rgba(79, 209, 197, 0.10), transparent 25%),
-        linear-gradient(180deg, #050c1b 0%, #091327 25%, #081121 55%, #050c1b 100%);
+        radial-gradient(circle at top left, rgba(38, 74, 152, 0.22), transparent 24%),
+        radial-gradient(circle at top right, rgba(79, 209, 197, 0.08), transparent 22%),
+        linear-gradient(180deg, #030915 0%, #071224 38%, #050d1b 100%);
     }
 
     a {
@@ -58,7 +63,7 @@
       top: 0;
       z-index: 100;
       backdrop-filter: blur(14px);
-      background: rgba(6, 13, 29, 0.80);
+      background: rgba(4, 10, 24, 0.84);
       border-bottom: 1px solid var(--border);
     }
 
@@ -73,8 +78,8 @@
     .brand {
       font-weight: 800;
       font-size: 1rem;
-      color: var(--text);
       letter-spacing: 0.2px;
+      color: var(--text);
     }
 
     .nav-links {
@@ -95,35 +100,55 @@
     }
 
     .hero {
-      padding: 92px 0 56px;
+      padding: 88px 0 48px;
       position: relative;
       overflow: hidden;
     }
 
-    .hero::after {
+    .hero::before {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 15% 20%, rgba(245, 192, 40, 0.08), transparent 22%),
-        radial-gradient(circle at 85% 25%, rgba(122, 162, 255, 0.12), transparent 22%);
+        radial-gradient(circle at 15% 30%, rgba(244, 195, 46, 0.12), transparent 20%),
+        radial-gradient(circle at 80% 20%, rgba(120, 168, 255, 0.18), transparent 22%);
       pointer-events: none;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.95fr;
-      gap: 26px;
-      align-items: start;
+    .hero-wrap {
       position: relative;
       z-index: 1;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .hero-side {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: 34px 34px 30px;
+    }
+
+    .hero-side {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
     }
 
     .eyebrow {
       display: inline-block;
       font-size: 0.82rem;
       font-weight: 800;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 14px;
@@ -131,24 +156,23 @@
 
     h1 {
       margin: 0 0 16px;
-      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      font-size: clamp(2.7rem, 5vw, 5rem);
       line-height: 1.04;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
       max-width: 860px;
     }
 
     .subtitle {
-      margin: 0 0 26px;
-      max-width: 760px;
-      font-size: 1.08rem;
+      margin: 0 0 24px;
       color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 760px;
     }
 
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 12px;
     }
 
     .tag {
@@ -156,60 +180,82 @@
       padding: 8px 12px;
       border-radius: 999px;
       border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
       color: var(--muted);
       font-size: 0.84rem;
-      background: rgba(255,255,255,0.04);
     }
 
-    .hero-cards,
-    .grid-2,
-    .grid-3,
-    .grid-4 {
-      display: grid;
-      gap: 18px;
-    }
-
-    .hero-cards {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .grid-4 {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--shadow);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: var(--border-strong);
-      box-shadow: 0 24px 48px rgba(0,0,0,0.34);
-    }
-
-    .metric {
-      font-size: 2.15rem;
+    .hero-side-title {
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
       font-weight: 800;
-      margin-bottom: 4px;
-      color: var(--text);
+      margin-bottom: 16px;
     }
 
-    .metric-label {
+    .hero-author-name {
+      font-size: 1.8rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .hero-author-meta {
+      color: var(--soft);
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-author-desc {
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: 0.98rem;
+      margin-bottom: 22px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .mini-metric {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .mini-metric-value {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .mini-metric-label {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #f6c637, #f1ad0d);
+      color: #091224;
+      font-weight: 800;
+      border: none;
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(244, 195, 46, 0.24);
+      transition: 0.22s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      text-decoration: none;
+      filter: brightness(1.03);
     }
 
     section {
@@ -218,8 +264,8 @@
 
     h2 {
       margin: 0 0 14px;
-      font-size: clamp(1.65rem, 3vw, 2.6rem);
-      line-height: 1.15;
+      font-size: clamp(1.75rem, 3vw, 2.6rem);
+      line-height: 1.16;
       letter-spacing: -0.01em;
     }
 
@@ -239,20 +285,49 @@
 
     .section-intro {
       max-width: 860px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       font-size: 1.02rem;
     }
 
     .accent-line {
       height: 1px;
-      background: linear-gradient(90deg, rgba(245,192,40,0.6), rgba(122,162,255,0.2), transparent);
-      margin: 14px 0 2px;
+      background: linear-gradient(90deg, rgba(244,195,46,0.65), rgba(120,168,255,0.24), transparent);
       border: 0;
+      margin: 14px 0 2px;
     }
 
-    .small {
-      font-size: 0.92rem;
-      color: var(--soft);
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-strong);
+      box-shadow: 0 24px 46px rgba(0,0,0,0.34);
     }
 
     code.inline {
@@ -353,136 +428,77 @@
       font-weight: 800;
     }
 
-    .figure-grid img {
-      width: 100%;
+    .figure-card {
+      padding: 22px;
+      overflow: hidden;
+    }
+
+    .figure-card img {
       display: block;
-      border-radius: 20px;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      border-radius: 18px;
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.02);
-      object-fit: contain;
       box-shadow: var(--shadow-soft);
     }
 
-    .figure-card {
-      padding: 22px;
-    }
-
     .figure-caption {
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 0.93rem;
       color: var(--muted);
     }
 
-    .img-standard {
-      max-height: 420px;
+    .standard-graph img {
+      min-height: 260px;
+      object-fit: contain;
     }
 
-    .img-large {
-      max-height: 520px;
+    .large-graph img {
+      min-height: 340px;
+      object-fit: contain;
     }
 
-    .img-xl {
-      max-height: 620px;
+    .dominant-graph img {
+      min-height: 420px;
+      object-fit: contain;
     }
 
-    .img-dominant {
-      max-height: 620px;
+    .ml-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      margin-top: 22px;
     }
 
-    .img-dendrogram {
-      max-height: 820px;
+    .ml-graph img {
+      width: 100%;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
     }
 
-    .ml-figure-grid .card {
-      padding: 24px;
+    .ml-pca img {
+      min-height: 420px;
     }
 
-    .author-section {
-      padding-top: 24px;
-    }
-
-    .author-card {
-      text-align: center;
-      padding: 34px 24px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
-    }
-
-    .author-label {
-      color: var(--gold);
-      font-weight: 800;
-      font-size: 0.85rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .author-avatar {
-      width: 108px;
-      height: 108px;
-      margin: 0 auto 18px;
-      border-radius: 50%;
-      background: linear-gradient(180deg, #f7c83d, #f5aa0a);
-      color: #081121;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.2rem;
-      font-weight: 900;
-      box-shadow: 0 12px 30px rgba(245, 192, 40, 0.28);
-    }
-
-    .author-name {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 6px;
-      color: var(--text);
-    }
-
-    .author-meta {
-      color: var(--soft);
-      font-size: 1rem;
-      margin-bottom: 18px;
-    }
-
-    .author-desc {
-      max-width: 760px;
-      margin: 0 auto 22px;
-      font-size: 1.03rem;
-      color: var(--muted);
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 16px;
-      background: linear-gradient(180deg, #f7c83d, #f1ad0c);
-      color: #081121;
-      font-weight: 800;
-      border: none;
-      text-decoration: none;
-      box-shadow: 0 12px 30px rgba(245, 192, 40, 0.22);
-      transition: 0.22s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      text-decoration: none;
-      filter: brightness(1.03);
+    .ml-dendrogram img {
+      min-height: 540px;
     }
 
     .footer {
-      padding: 38px 0 60px;
+      padding: 42px 0 62px;
       color: var(--soft);
       font-size: 0.95rem;
       text-align: center;
     }
 
-    @media (max-width: 980px) {
-      .hero-grid,
+    @media (max-width: 1020px) {
+      .hero-wrap,
       .grid-2,
       .grid-3,
-      .grid-4,
-      .hero-cards {
+      .grid-4 {
         grid-template-columns: 1fr;
       }
 
@@ -492,17 +508,39 @@
       }
 
       h1 {
-        font-size: clamp(2.1rem, 8vw, 4rem);
+        font-size: clamp(2.2rem, 8vw, 4rem);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        padding-top: 72px;
+      }
+
+      .hero-main,
+      .hero-side {
+        padding: 24px 20px;
+      }
+
+      .hero-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .findings-table thead th,
+      .findings-table tbody td {
+        padding: 14px;
       }
     }
   </style>
 </head>
 <body>
+
   <nav class="nav">
     <div class="container nav-inner">
-      <div class="brand">DSA210 · Champion Profile Project</div>
+      <div class="brand">DSA210 · Champion Team Profile</div>
       <div class="nav-links">
         <a href="#home">Home</a>
+        <a href="#author">Author</a>
         <a href="#motivation">Motivation</a>
         <a href="#data">Data</a>
         <a href="#methodology">Methodology</a>
@@ -510,66 +548,103 @@
         <a href="#ml">ML Results</a>
         <a href="#limitations">Limitations</a>
         <a href="#ai">AI Disclosure</a>
-        <a href="#author">Author</a>
         <a href="#conclusion">Conclusion</a>
       </div>
     </div>
   </nav>
 
   <header id="home" class="hero">
-    <div class="container hero-grid">
-      <div>
+    <div class="container hero-wrap">
+      <div class="hero-main">
         <div class="eyebrow">DSA 210 · Final Report</div>
         <h1>Profiling Championship-Winning Football Teams Across Leagues</h1>
         <p class="subtitle">
-          This project investigates whether champions across multiple football leagues share recurring patterns in managerial profile, tactical structure, and squad age composition.
+          This project investigates whether football champions from multiple leagues share recurring structural patterns in coach background, tactical setup, and squad age composition.
         </p>
 
         <div class="hero-tags">
           <span class="tag">45 champion observations</span>
           <span class="tag">9 leagues</span>
           <span class="tag">2018–2019 to 2023–2024</span>
-          <span class="tag">EDA + Hypothesis Testing + ML</span>
+          <span class="tag">EDA + Hypothesis Tests + ML</span>
         </div>
       </div>
 
-      <div class="hero-cards">
-        <div class="card">
-          <div class="metric">29</div>
-          <div class="metric-label">Domestic-coach champions</div>
+      <div class="hero-side">
+        <div>
+          <div class="hero-side-title">Project Snapshot</div>
+          <div class="hero-author-name">Champion Profile Analysis</div>
+          <div class="hero-author-meta">Cross-league structural profiling of title-winning teams</div>
+          <p class="hero-author-desc">
+            The study focuses on domestic vs foreign coach tendencies, back-four tactical preference, average age patterns, and unsupervised clustering of champion archetypes.
+          </p>
         </div>
-        <div class="card">
-          <div class="metric">16</div>
-          <div class="metric-label">Foreign-coach champions</div>
-        </div>
-        <div class="card">
-          <div class="metric">0.8005</div>
-          <div class="metric-label">Mean back-four rate</div>
-        </div>
-        <div class="card">
-          <div class="metric">27.10</div>
-          <div class="metric-label">Mean squad age</div>
+
+        <div class="hero-metrics">
+          <div class="mini-metric">
+            <div class="mini-metric-value">29</div>
+            <div class="mini-metric-label">Domestic-coach champions</div>
+          </div>
+          <div class="mini-metric">
+            <div class="mini-metric-value">16</div>
+            <div class="mini-metric-label">Foreign-coach champions</div>
+          </div>
+          <div class="mini-metric">
+            <div class="mini-metric-value">0.8005</div>
+            <div class="mini-metric-label">Mean back-four rate</div>
+          </div>
+          <div class="mini-metric">
+            <div class="mini-metric-value">27.10</div>
+            <div class="mini-metric-label">Mean squad age</div>
+          </div>
         </div>
       </div>
     </div>
   </header>
 
+  <section id="author">
+    <div class="container">
+      <h2>Author</h2>
+      <p class="section-intro">
+        This project was prepared as the final report for DSA 210.
+      </p>
+      <hr class="accent-line" />
+
+      <div class="card" style="margin-top:20px; text-align:center; padding:34px 28px;">
+        <div class="eyebrow" style="margin-bottom:12px;">Project Author</div>
+        <h3 style="font-size:2.4rem; margin-bottom:10px;">Sancar Tegin Gökçe</h3>
+        <p style="margin:0 0 12px; color:var(--soft); font-size:1.05rem;">
+          Sabancı University · Student ID: 33838
+        </p>
+        <p style="max-width:760px; margin:0 auto 22px; font-size:1.02rem;">
+          This final report was prepared for <strong>DSA 210 – Introduction to Data Science</strong>.
+          The project explores whether football champions across leagues share a common structural profile
+          in terms of coach background, tactical setup, and squad age.
+        </p>
+        <a class="btn" href="https://github.com/sancargokce/DSA210_TermProject" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
   <section id="motivation">
     <div class="container">
       <h2>Motivation</h2>
       <p class="section-intro">
-        Football analysis often emphasizes points, transfers, or budgets. This project instead asks whether championship-winning teams themselves share a broader structural identity. By comparing champions across leagues and seasons, the analysis aims to reveal whether there is a recurring “champion profile.”
+        Football analysis often focuses on results, transfers, or financial resources. This project instead asks whether championship-winning teams themselves share a broader structural identity. By comparing champions across leagues and seasons, the goal is to reveal whether there is a recurring “champion profile.”
       </p>
       <hr class="accent-line" />
+
       <div class="grid-3" style="margin-top:20px;">
         <div class="card">
           <h3>H1 — Coach Nationality</h3>
           <p>Championship-winning teams tend to work with domestic coaches more often than foreign coaches.</p>
         </div>
+
         <div class="card">
           <h3>H2 — Tactical Structure</h3>
           <p>Back-four defensive systems are expected to be more common among champions than alternative structures.</p>
         </div>
+
         <div class="card">
           <h3>H3 — Squad Experience</h3>
           <p>Champions are expected to cluster around a relatively mature and stable age profile.</p>
@@ -585,6 +660,7 @@
         The unit of analysis is one champion team in one league-season. The final dataset combines match-level, lineup-level, appearance-level, and player-level football data, along with manually enriched coach nationality information.
       </p>
       <hr class="accent-line" />
+
       <div class="grid-2" style="margin-top:20px;">
         <div class="card">
           <h3>League Coverage</h3>
@@ -600,6 +676,7 @@
             <li>Belgian Pro League</li>
           </ul>
         </div>
+
         <div class="card">
           <h3>Core Variables</h3>
           <ul>
@@ -616,15 +693,17 @@
       <div class="grid-3" style="margin-top:18px;">
         <div class="card">
           <h3>Data Sources</h3>
-          <p><strong>games.csv</strong>, <strong>appearances.csv</strong>, <strong>players.csv</strong>, and supporting Transfermarkt-based raw files were used in the data construction stage.</p>
+          <p><strong>games.csv</strong>, <strong>appearances.csv</strong>, <strong>players.csv</strong>, and supporting Transfermarkt-based raw files were used during dataset construction.</p>
         </div>
+
         <div class="card">
           <h3>Feature Engineering</h3>
-          <p>Coach identity, dominant formation, and back-four rate were generated from team match records, while average age was computed as a minutes-weighted measure.</p>
+          <p>Coach identity, dominant formation, and back-four rate were derived from team match records, while average age was computed as a minutes-weighted measure.</p>
         </div>
+
         <div class="card">
           <h3>Manual Enrichment</h3>
-          <p>Coach nationality was completed manually through a lookup file, and the domestic/foreign indicator was derived from this field.</p>
+          <p>Coach nationality was completed manually through a lookup file, and the domestic/foreign indicator was generated from this field.</p>
         </div>
       </div>
     </div>
@@ -637,19 +716,23 @@
         The workflow moved from raw data construction to exploratory analysis, hypothesis testing, and finally unsupervised learning for latent champion profiling.
       </p>
       <hr class="accent-line" />
+
       <div class="grid-4" style="margin-top:20px;">
         <div class="card">
           <h3>1. Target Team Definition</h3>
           <p>A champion list was prepared covering 45 observations across leagues and seasons.</p>
         </div>
+
         <div class="card">
           <h3>2. Team Matching Pipeline</h3>
           <p>Competition codes, season filters, fuzzy matching, and manual overrides were used to match teams across different datasets.</p>
         </div>
+
         <div class="card">
           <h3>3. Variable Construction</h3>
           <p>Dominant tactical structure, back-four usage, coach information, and age metrics were derived and merged into a final champion profile table.</p>
         </div>
+
         <div class="card">
           <h3>4. Analysis Stage</h3>
           <p>EDA, formal statistical tests, and unsupervised ML methods were used to evaluate the research questions and discover hidden archetypes.</p>
@@ -688,7 +771,7 @@
                 </div>
               </td>
               <td>
-                Domestic coaches are more common among champions, but the difference is not large enough to support a strong causal reading.
+                Domestic coaches are more common among champions, but the difference is not large enough to justify a very strong causal interpretation.
               </td>
             </tr>
 
@@ -703,7 +786,7 @@
                 </div>
               </td>
               <td>
-                This is the clearest result in the project: championship-winning teams heavily rely on back-four defensive systems.
+                This is the clearest result of the project: championship-winning teams overwhelmingly rely on back-four defensive systems.
               </td>
             </tr>
 
@@ -718,7 +801,7 @@
                 </div>
               </td>
               <td>
-                Most champions have a dominant tactical identity that starts with a four-man defensive base.
+                Most champions have a dominant tactical identity built on a four-man defensive base.
               </td>
             </tr>
 
@@ -747,7 +830,7 @@
                 </div>
               </td>
               <td>
-                Unsupervised learning was applied to uncover latent champion archetypes rather than to predict outcomes.
+                Unsupervised learning was used to uncover latent champion archetypes rather than to predict outcomes.
               </td>
             </tr>
           </tbody>
@@ -755,23 +838,23 @@
       </div>
 
       <div class="grid-2" style="margin-top:22px;">
-        <div class="card figure-card">
-          <img class="img-large" src="outputs/figures/domestic_vs_foreign_coaches.png" alt="Domestic vs Foreign Coaches" />
+        <div class="card figure-card large-graph">
+          <img src="outputs/figures/domestic_vs_foreign_coaches.png" alt="Domestic vs Foreign Coaches">
           <div class="figure-caption">Domestic vs foreign coach distribution among champions.</div>
         </div>
 
-        <div class="card figure-card">
-          <img class="img-dominant" src="outputs/figures/dominant_formations.png" alt="Dominant formations" />
+        <div class="card figure-card dominant-graph">
+          <img src="outputs/figures/dominant_formations.png" alt="Dominant formations">
           <div class="figure-caption">Most common dominant formations among championship-winning teams.</div>
         </div>
 
-        <div class="card figure-card">
-          <img class="img-large" src="outputs/figures/avg_age_distribution.png" alt="Average age distribution" />
+        <div class="card figure-card large-graph">
+          <img src="outputs/figures/avg_age_distribution.png" alt="Average age distribution">
           <div class="figure-caption">Distribution of minutes-weighted average squad age.</div>
         </div>
 
-        <div class="card figure-card">
-          <img class="img-large" src="outputs/figures/back_four_rate_distribution.png" alt="Back four rate distribution" />
+        <div class="card figure-card large-graph">
+          <img src="outputs/figures/back_four_rate_distribution.png" alt="Back four rate distribution">
           <div class="figure-caption">Back-four usage is strongly concentrated near 1.0.</div>
         </div>
       </div>
@@ -782,35 +865,35 @@
     <div class="container">
       <h2>Machine Learning Results</h2>
       <p class="section-intro">
-        Because the dataset contains only champion teams, supervised prediction was not appropriate. Instead, the machine learning stage focused on <strong>unsupervised learning</strong> to detect structural groupings among champions.
+        Since the dataset contains only championship-winning teams, supervised prediction was not appropriate. Instead, the machine learning stage focused on <strong>unsupervised learning</strong> to identify latent champion archetypes.
       </p>
       <hr class="accent-line" />
 
       <div class="grid-3" style="margin-top:20px;">
         <div class="card">
           <h3>K-Means Clustering</h3>
-          <p>Clusters were created using <code class="inline">domestic_coach</code>, <code class="inline">back_four_rate</code>, and <code class="inline">avg_age</code>.</p>
+          <p>Clusters were built using <code class="inline">domestic_coach</code>, <code class="inline">back_four_rate</code>, and <code class="inline">avg_age</code>.</p>
         </div>
 
         <div class="card">
           <h3>Hierarchical Clustering</h3>
-          <p>A dendrogram was used to reveal broader structural similarity patterns between champion teams.</p>
+          <p>A dendrogram was used to inspect broader structural similarity between champion teams beyond the K-Means partition.</p>
         </div>
 
         <div class="card">
           <h3>PCA Visualization</h3>
-          <p>PCA projected champions into two dimensions so cluster patterns could be visually interpreted more clearly.</p>
+          <p>PCA projected champions into two dimensions to visualize latent groupings and champion archetypes more clearly.</p>
         </div>
       </div>
 
-      <div class="grid-2 ml-figure-grid" style="margin-top:22px;">
-        <div class="card figure-card">
-          <img class="img-xl" src="outputs/figures/ml_pca_clusters.png" alt="PCA clusters" />
+      <div class="ml-grid">
+        <div class="card figure-card ml-graph ml-pca">
+          <img src="outputs/figures/ml_pca_clusters.png" alt="PCA clusters">
           <div class="figure-caption">PCA projection of champions colored by K-Means cluster.</div>
         </div>
 
-        <div class="card figure-card">
-          <img class="img-dendrogram" src="outputs/figures/ml_dendrogram.png" alt="Hierarchical clustering dendrogram" />
+        <div class="card figure-card ml-graph ml-dendrogram">
+          <img src="outputs/figures/ml_dendrogram.png" alt="Hierarchical clustering dendrogram">
           <div class="figure-caption">Hierarchical clustering dendrogram showing relative structural similarity between champion teams.</div>
         </div>
       </div>
@@ -837,7 +920,7 @@
         <div class="card">
           <ul>
             <li>Formation labels are not fully standardized across all records.</li>
-            <li>The domestic-coach interpretation is somewhat dependent on the benchmark used.</li>
+            <li>The domestic-coach interpretation depends partly on the benchmark used.</li>
             <li>The project is stronger in <strong>descriptive profiling</strong> than in causal explanation.</li>
           </ul>
         </div>
@@ -859,25 +942,10 @@
           <li><strong>Statistical Analysis Architecture:</strong> Structuring the hypothesis-testing workflow in Python by translating statistical reasoning into executable procedures for binomial tests, one-sample t-tests, Wilcoxon signed-rank tests, and confidence interval estimation, while helping express these results in a formally written analytical framework.</li>
           <li><strong>Project Website Development:</strong> Assisting with the organization, styling, and refinement of the HTML/CSS-based final project website, including the placement of visual outputs and report sections.</li>
         </ul>
+
         <p>
           All research decisions, methodological design, hypothesis formulation, feature selection, result interpretation, and academic ownership remain entirely with the student.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="author" class="author-section">
-    <div class="container">
-      <h2>Author</h2>
-      <div class="card author-card" style="margin-top:18px;">
-        <div class="author-label">Project Author</div>
-        <div class="author-avatar">SG</div>
-        <div class="author-name">Sancar Tegin Gökçe</div>
-        <div class="author-meta">Sabancı University · Student ID: 33838</div>
-        <p class="author-desc">
-          This final report was prepared for <strong>DSA 210 – Introduction to Data Science</strong>. The project explores whether football champions across leagues share a common structural profile in terms of coach background, tactical setup, and squad age.
-        </p>
-        <a class="btn" href="https://github.com/sancargokce/DSA210_TermProject" target="_blank">View on GitHub</a>
       </div>
     </div>
   </section>
@@ -892,16 +960,16 @@
 
       <div class="card" style="margin-top:20px;">
         <p>
-          The results indicate that domestic coaches are somewhat more common among champions, though this evidence is best interpreted as <strong>weakly supportive</strong> rather than conclusive.
+          The results show that domestic coaches are somewhat more common among champions, although this evidence is best interpreted as <strong>weakly supportive</strong> rather than conclusive.
         </p>
         <p>
-          In contrast, the tactical findings are much stronger: championship-winning teams overwhelmingly rely on back-four systems, and dominant formations that begin with “4” clearly dominate the sample.
+          The tactical findings are much stronger: championship-winning teams overwhelmingly rely on back-four systems, and dominant formations that begin with “4” clearly dominate the sample.
         </p>
         <p>
-          The age results suggest that champions tend to cluster around a relatively stable age profile, while the unsupervised ML stage further shows that champions are not identical but can still be grouped into meaningful structural archetypes.
+          The age results suggest that champions tend to cluster around a relatively stable age profile, while the unsupervised ML stage shows that champions are not identical but can still be grouped into meaningful structural archetypes.
         </p>
         <p>
-          Overall, the project shows that title-winning football teams can be studied not only through points and trophies, but also through a broader structural lens that includes managerial identity, tactical organization, and squad composition.
+          Overall, the project demonstrates that title-winning football teams can be studied not only through points and trophies, but also through a broader structural lens involving managerial identity, tactical organization, and squad composition.
         </p>
       </div>
     </div>
@@ -912,5 +980,6 @@
       Built for Sabancı University · DSA 210 Final Report · Sancar Tegin Gökçe
     </div>
   </footer>
+
 </body>
 </html>
