@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSA210 Final Report | Champion Profile</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #121933;
+      --card: #151d3b;
+      --text: #eef2ff;
+      --muted: #b7c0e0;
+      --accent: #7aa2ff;
+      --accent-2: #4fd1c5;
+      --border: rgba(255,255,255,0.10);
+      --shadow: 0 12px 30px rgba(0,0,0,0.28);
+      --maxw: 1150px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #0e1428 45%, #0a0f1e);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(100% - 32px, var(--maxw));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(11,16,32,0.76);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 72px 0 42px;
+    }
+
+    .eyebrow {
+      color: var(--accent-2);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4.3rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      max-width: 900px;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 26px;
+    }
+
+    .hero-grid,
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .hero-grid { grid-template-columns: 1.3fr 0.9fr; align-items: start; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .metric {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 26px 0 22px;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+      margin: 0 0 12px;
+    }
+
+    h3 {
+      font-size: 1.08rem;
+      margin: 0 0 8px;
+    }
+
+    p, li {
+      color: var(--muted);
+    }
+
+    .section-intro {
+      max-width: 850px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin: 0 8px 8px 0;
+      background: rgba(255,255,255,0.03);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    th, td {
+      text-align: left;
+      padding: 14px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      vertical-align: top;
+      font-size: 0.95rem;
+    }
+
+    th {
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .status-strong { color: #7ee787; font-weight: 700; }
+    .status-weak { color: #f2cc60; font-weight: 700; }
+    .status-desc { color: #9cc2ff; font-weight: 700; }
+
+    .quote {
+      border-left: 3px solid var(--accent);
+      padding-left: 14px;
+      color: var(--text);
+      margin: 14px 0 0;
+    }
+
+    .figure-grid img {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .figure-caption {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .footer {
+      padding: 36px 0 60px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .small {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    code.inline {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2px 6px;
+      color: var(--text);
+    }
+
+    pre {
+      white-space: pre-wrap;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      overflow: auto;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 940px) {
+      .hero-grid, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .nav-inner { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">DSA210 · Champion Profile Project</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#motivation">Motivation</a>
+        <a href="#data">Data</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#findings">Findings</a>
+        <a href="#ml">ML Results</a>
+        <a href="#limitations">Limitations</a>
+        <a href="#ai">AI Disclosure</a>
+        <a href="#conclusion">Conclusion</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">DSA 210 · Spring 2025–2026 · Term Project</div>
+        <h1>Profiling Championship-Winning Football Teams Across Leagues</h1>
+        <p class="subtitle">
+          A cross-league data science investigation into whether title-winning teams share a common profile in terms of coach background, tactical structure, and squad age.
+        </p>
+        <div>
+          <span class="tag">45 Observations</span>
+          <span class="tag">9 Leagues</span>
+          <span class="tag">2018–2019 to 2023–2024</span>
+          <span class="tag">EDA + Hypothesis Tests + ML</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="metric">29</div>
+          <div class="metric-label">Domestic-coach champions</div>
+        </div>
+        <div class="card">
+          <div class="metric">16</div>
+          <div class="metric-label">Foreign-coach champions</div>
+        </div>
+        <div class="card">
+          <div class="metric">0.8005</div>
+          <div class="metric-label">Mean back-four rate</div>
+        </div>
+        <div class="card">
+          <div class="metric">27.10</div>
+          <div class="metric-label">Mean squad age</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="motivation">
+    <div class="container">
+      <h2>Motivation</h2>
+      <p class="section-intro">
+        Football analysis often focuses on player quality, transfer value, or match outcomes. This project asks a different question: do champions themselves display repeated structural patterns across leagues and seasons?
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>H1 — Domestic Coach</h3>
+          <p>Do championship-winning teams tend to work with domestic coaches?</p>
+        </div>
+        <div class="card">
+          <h3>H2 — Back-Four Preference</h3>
+          <p>Do championship-winning teams tend to rely on back-four defensive systems?</p>
+        </div>
+        <div class="card">
+          <h3>H3 — Age Profile</h3>
+          <p>Do champions cluster around a similar average squad age?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="data">
+    <div class="container">
+      <h2>Data</h2>
+      <p class="section-intro">
+        The final dataset contains one observation per league champion and season. The project combines automated extraction from match-level and appearance-level football data with manual enrichment for coach nationality.
+      </p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Coverage</h3>
+          <ul>
+            <li>Premier League</li>
+            <li>La Liga</li>
+            <li>Serie A</li>
+            <li>Bundesliga</li>
+            <li>Ligue 1</li>
+            <li>Eredivisie</li>
+            <li>Primeira Liga</li>
+            <li>Süper Lig</li>
+            <li>Belgian Pro League</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Final Variables</h3>
+          <ul>
+            <li><code class="inline">coach_name</code></li>
+            <li><code class="inline">coach_nationality</code></li>
+            <li><code class="inline">domestic_coach</code></li>
+            <li><code class="inline">dominant_formation</code></li>
+            <li><code class="inline">back_four_rate</code></li>
+            <li><code class="inline">avg_age</code></li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:18px;">
+        <div class="card">
+          <h3>games.csv</h3>
+          <p>Used for <strong>coach_name</strong>, <strong>dominant_formation</strong>, and <strong>back_four_rate</strong>.</p>
+        </div>
+        <div class="card">
+          <h3>appearances.csv + players.csv</h3>
+          <p>Used to calculate <strong>minutes-weighted average age</strong>.</p>
+        </div>
+        <div class="card">
+          <h3>Manual enrichment</h3>
+          <p><strong>coach_nationality</strong> was added using a manually built lookup table, and <strong>domestic_coach</strong> was derived from it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="methodology">
+    <div class="container">
+      <h2>Methodology</h2>
+      <div class="grid-4">
+        <div class="card">
+          <h3>01 · Team Selection</h3>
+          <p>A target champion list was created for 9 leagues and 45 champion team-season observations.</p>
+        </div>
+        <div class="card">
+          <h3>02 · Matching Pipeline</h3>
+          <p>Competition filtering, season filtering, fuzzy matching, and manual club ID overrides were used to align teams across sources.</p>
+        </div>
+        <div class="card">
+          <h3>03 · Feature Construction</h3>
+          <p>Coach, formation, back-four rate, and average age variables were created from processed football data.</p>
+        </div>
+        <div class="card">
+          <h3>04 · Analysis</h3>
+          <p>EDA, hypothesis testing, and unsupervised ML methods were applied to identify structural champion profiles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="findings">
+    <div class="container">
+      <h2>Findings</h2>
+      <p class="section-intro">
+        The strongest evidence appears in the tactical dimension. The domestic-coach hypothesis receives weaker support, while the age-profile hypothesis is best interpreted descriptively.
+      </p>
+      <div class="card" style="margin-bottom:18px; overflow:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Hypothesis</th>
+              <th>Result</th>
+              <th>Evidence</th>
+              <th>Interpretation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>H1 — Domestic Coach</td>
+              <td class="status-weak">Weakly Supported</td>
+              <td>29 / 45 domestic coaches, exact binomial test p = 0.0362</td>
+              <td>Domestic coaches are more common among champions, but the margin is not overwhelming.</td>
+            </tr>
+            <tr>
+              <td>H2 — Back-Four Preference</td>
+              <td class="status-strong">Strongly Supported</td>
+              <td>Mean back_four_rate = 0.8005, t-test p = 1.38e-07, Wilcoxon p = 1.54e-05</td>
+              <td>Champions overwhelmingly rely on back-four structures.</td>
+            </tr>
+            <tr>
+              <td>H2b — Dominant Formation Starts With 4</td>
+              <td class="status-strong">Strongly Supported</td>
+              <td>37 / 45 teams, p = 7.69e-06</td>
+              <td>The dominant tactical identity of most champions starts with a back four.</td>
+            </tr>
+            <tr>
+              <td>H3 — Age Profile</td>
+              <td class="status-desc">Descriptively Supported</td>
+              <td>Mean = 27.10, 95% CI = [26.72, 27.48]</td>
+              <td>Champion teams cluster in a relatively narrow age band.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid-2 figure-grid">
+        <div class="card">
+          <img src="outputs/figures/domestic_vs_foreign_coaches.png" alt="Domestic vs Foreign Coaches" />
+          <div class="figure-caption">Domestic vs foreign coach distribution among champions.</div>
+        </div>
+        <div class="card">
+          <img src="outputs/figures/dominant_formations.png" alt="Dominant formations" />
+          <div class="figure-caption">Most common dominant formations among title-winning teams.</div>
+        </div>
+        <div class="card">
+          <img src="outputs/figures/avg_age_distribution.png" alt="Average age distribution" />
+          <div class="figure-caption">Distribution of minutes-weighted average squad age.</div>
+        </div>
+        <div class="card">
+          <img src="outputs/figures/back_four_rate_distribution.png" alt="Back four rate distribution" />
+          <div class="figure-caption">Back-four usage is strongly concentrated near 1.0.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ml">
+    <div class="container">
+      <h2>Machine Learning Results</h2>
+      <p class="section-intro">
+        Since the dataset contains only championship-winning teams, supervised prediction was not appropriate. Instead, the ML stage focused on <strong>unsupervised learning</strong> to identify latent champion archetypes.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>K-Means Clustering</h3>
+          <p>Clusters were built using <code class="inline">domestic_coach</code>, <code class="inline">back_four_rate</code>, and <code class="inline">avg_age</code>.</p>
+        </div>
+        <div class="card">
+          <h3>Hierarchical Clustering</h3>
+          <p>A dendrogram was used to inspect structural similarities between champions beyond the K-Means partition.</p>
+        </div>
+        <div class="card">
+          <h3>PCA Visualization</h3>
+          <p>PCA projected champions into two dimensions to visualize latent groupings and champion archetypes.</p>
+        </div>
+      </div>
+      <div class="grid-2 figure-grid" style="margin-top:18px;">
+        <div class="card">
+          <img src="outputs/figures/ml_pca_clusters.png" alt="PCA clusters" />
+          <div class="figure-caption">PCA projection of champions colored by K-Means cluster.</div>
+        </div>
+        <div class="card">
+          <img src="outputs/figures/ml_dendrogram.png" alt="Hierarchical clustering dendrogram" />
+          <div class="figure-caption">Hierarchical clustering dendrogram showing relative structural similarity.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="limitations">
+    <div class="container">
+      <h2>Limitations</h2>
+      <div class="grid-2">
+        <div class="card">
+          <ul>
+            <li>The sample size is relatively small (45 observations).</li>
+            <li><code class="inline">coach_nationality</code> was manually enriched.</li>
+            <li>Team-name inconsistencies required manual matching corrections.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <ul>
+            <li>Formation labels are not fully standardized.</li>
+            <li>The domestic-coach result is somewhat benchmark-dependent.</li>
+            <li>The project is stronger on structural profiling than on causal explanation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai">
+    <div class="container">
+      <h2>AI Disclosure</h2>
+      <p class="section-intro">
+        In accordance with the course guideline, AI tools were used as a coding and writing assistant during the project. All final decisions, interpretations, debugging choices, data validation steps, and final conclusions were reviewed and controlled by the student.
+      </p>
+      <div class="card">
+        <h3>How AI was used</h3>
+        <ul>
+          <li>Debugging data processing scripts and matching logic</li>
+          <li>Drafting and refining README / report wording</li>
+          <li>Structuring hypothesis-testing code and result interpretation</li>
+          <li>Designing the final HTML-based report format</li>
+        </ul>
+        <p class="small">
+          This section should be adapted with specific prompts or a brief appendix if your instructor expects explicit prompt disclosure in the final report.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="conclusion">
+    <div class="container">
+      <h2>Conclusion</h2>
+      <div class="card">
+        <p>
+          This project builds a cross-league profile of championship-winning football teams using managerial, tactical, and squad-level variables.
+        </p>
+        <p>
+          The final analysis suggests that domestic coaches are somewhat more common among champions, but this evidence is <strong>weak rather than decisive</strong>. In contrast, back-four systems are <strong>strongly associated</strong> with championship-winning teams, and average squad age appears to cluster in a relatively narrow and stable range.
+        </p>
+        <p>
+          The machine learning stage shows that champions are not all identical, but they still group into interpretable structural archetypes. Overall, the project demonstrates that title-winning teams can be studied not only through points and results, but also through a broader structural profile combining coach background, tactical identity, and squad composition.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      Built for Sabancı University DSA 210 Term Project · Sancar Tegin Gökçe
+    </div>
+  </footer>
+</body>
+</html>
