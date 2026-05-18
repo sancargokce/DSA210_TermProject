@@ -186,6 +186,93 @@
     .status-weak { color: #f2cc60; font-weight: 700; }
     .status-desc { color: #9cc2ff; font-weight: 700; }
 
+    .findings-table-wrapper {
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+
+    .findings-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .findings-table thead th {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      padding: 16px 18px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .findings-table tbody td {
+      padding: 18px;
+      vertical-align: top;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .findings-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .findings-table tbody tr:hover {
+      background: rgba(255,255,255,0.025);
+    }
+
+    .result-badge {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .result-badge.strong {
+      background: rgba(126, 231, 135, 0.14);
+      color: #7ee787;
+      border-color: rgba(126, 231, 135, 0.35);
+    }
+
+    .result-badge.weak {
+      background: rgba(242, 204, 96, 0.14);
+      color: #f2cc60;
+      border-color: rgba(242, 204, 96, 0.35);
+    }
+
+    .result-badge.descriptive {
+      background: rgba(156, 194, 255, 0.14);
+      color: #9cc2ff;
+      border-color: rgba(156, 194, 255, 0.35);
+    }
+
+    .result-badge.completed {
+      background: rgba(79, 209, 197, 0.14);
+      color: #4fd1c5;
+      border-color: rgba(79, 209, 197, 0.35);
+    }
+
+    .evidence-block {
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .highlight-text {
+      color: var(--accent-2);
+      font-weight: 700;
+    }
+
     .quote {
       border-left: 3px solid var(--accent);
       padding-left: 14px;
@@ -398,48 +485,93 @@
     <div class="container">
       <h2>Findings</h2>
       <p class="section-intro">
-        The strongest evidence appears in the tactical dimension. The domestic-coach hypothesis receives weaker support, while the age-profile hypothesis is best interpreted descriptively.
+        The table below summarizes the main hypothesis-testing outcomes and the overall interpretation of each research question.
       </p>
-      <div class="card" style="margin-bottom:18px; overflow:auto;">
-        <table>
+      <div class="findings-table-wrapper">
+        <table class="findings-table">
           <thead>
             <tr>
               <th>Hypothesis</th>
               <th>Result</th>
-              <th>Evidence</th>
+              <th>Statistical Evidence</th>
               <th>Interpretation</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>H1 — Domestic Coach</td>
-              <td class="status-weak">Weakly Supported</td>
-              <td>29 / 45 domestic coaches, exact binomial test p = 0.0362</td>
-              <td>Domestic coaches are more common among champions, but the margin is not overwhelming.</td>
+              <td><strong>H1 — Domestic Coach</strong></td>
+              <td><span class="result-badge weak">Weakly Supported</span></td>
+              <td>
+                <div class="evidence-block">
+                  <strong>29 / 45</strong> domestic coaches<br>
+                  Exact binomial test<br>
+                  <span class="highlight-text">p = 0.0362</span>
+                </div>
+              </td>
+              <td>
+                Domestic coaches are more common among champions, but the difference is not strong enough to be interpreted as a dominant pattern.
+              </td>
             </tr>
             <tr>
-              <td>H2 — Back-Four Preference</td>
-              <td class="status-strong">Strongly Supported</td>
-              <td>Mean back_four_rate = 0.8005, t-test p = 1.38e-07, Wilcoxon p = 1.54e-05</td>
-              <td>Champions overwhelmingly rely on back-four structures.</td>
+              <td><strong>H2 — Back-Four Preference</strong></td>
+              <td><span class="result-badge strong">Strongly Supported</span></td>
+              <td>
+                <div class="evidence-block">
+                  Mean back_four_rate = <strong>0.8005</strong><br>
+                  t-test: <span class="highlight-text">p = 1.38e-07</span><br>
+                  Wilcoxon: <span class="highlight-text">p = 1.54e-05</span>
+                </div>
+              </td>
+              <td>
+                This is the strongest result in the project. Championship-winning teams overwhelmingly rely on back-four systems.
+              </td>
             </tr>
             <tr>
-              <td>H2b — Dominant Formation Starts With 4</td>
-              <td class="status-strong">Strongly Supported</td>
-              <td>37 / 45 teams, p = 7.69e-06</td>
-              <td>The dominant tactical identity of most champions starts with a back four.</td>
+              <td><strong>H2b — Dominant Formation Starts With 4</strong></td>
+              <td><span class="result-badge strong">Strongly Supported</span></td>
+              <td>
+                <div class="evidence-block">
+                  <strong>37 / 45</strong> teams<br>
+                  Exact binomial test<br>
+                  <span class="highlight-text">p = 7.69e-06</span>
+                </div>
+              </td>
+              <td>
+                The dominant tactical identity of most championship-winning teams begins with a back-four structure.
+              </td>
             </tr>
             <tr>
-              <td>H3 — Age Profile</td>
-              <td class="status-desc">Descriptively Supported</td>
-              <td>Mean = 27.10, 95% CI = [26.72, 27.48]</td>
-              <td>Champion teams cluster in a relatively narrow age band.</td>
+              <td><strong>H3 — Age Profile</strong></td>
+              <td><span class="result-badge descriptive">Descriptively Supported</span></td>
+              <td>
+                <div class="evidence-block">
+                  Mean = <strong>27.10</strong><br>
+                  95% CI = <span class="highlight-text">[26.72, 27.48]</span>
+                </div>
+              </td>
+              <td>
+                Champion teams cluster around a relatively narrow and stable age range, even though the result is better interpreted descriptively than inferentially.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>ML Stage — Champion Profiling</strong></td>
+              <td><span class="result-badge completed">Completed</span></td>
+              <td>
+                <div class="evidence-block">
+                  K-Means<br>
+                  PCA<br>
+                  Hierarchical Clustering
+                </div>
+              </td>
+              <td>
+                Unsupervised learning was used to explore hidden champion archetypes within the dataset.
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="grid-2 figure-grid">
+      <div class="grid-2 figure-grid" style="margin-top:18px;">
         <div class="card">
           <img src="outputs/figures/domestic_vs_foreign_coaches.png" alt="Domestic vs Foreign Coaches" />
           <div class="figure-caption">Domestic vs foreign coach distribution among champions.</div>
@@ -519,18 +651,18 @@
     <div class="container">
       <h2>AI Disclosure</h2>
       <p class="section-intro">
-        In accordance with the course guideline, AI tools were used as a coding and writing assistant during the project. All final decisions, interpretations, debugging choices, data validation steps, and final conclusions were reviewed and controlled by the student.
+        This project used AI assistance during the development process in accordance with the DSA 210 academic integrity guidelines. AI tools were used mainly for refactoring and extending Python analysis code, debugging data-processing scripts, structuring parts of the final project website, and improving the wording of documentation.
       </p>
       <div class="card">
-        <h3>How AI was used</h3>
-        <ul>
-          <li>Debugging data processing scripts and matching logic</li>
-          <li>Drafting and refining README / report wording</li>
-          <li>Structuring hypothesis-testing code and result interpretation</li>
-          <li>Designing the final HTML-based report format</li>
-        </ul>
+        <h3>Disclosure Statement</h3>
+        <p>
+          This project used Claude (Anthropic) and ChatGPT as AI assistants for refactoring and extending Python analysis code, debugging data preparation steps, improving parts of the written project documentation, and helping build this project webpage. All analytical decisions, hypothesis framing, data validation, variable construction choices, and interpretation of results were made by the student.
+        </p>
+        <p>
+          AI usage is documented in the GitHub commit history and supporting project files, as required by DSA 210 academic integrity guidelines.
+        </p>
         <p class="small">
-          This section should be adapted with specific prompts or a brief appendix if your instructor expects explicit prompt disclosure in the final report.
+          A separate repository file documents the role of AI assistance more explicitly.
         </p>
       </div>
     </div>
